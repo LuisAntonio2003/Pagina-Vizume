@@ -1,0 +1,122 @@
+/**estilos generales**/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/**Gama de colores**/
+:root {
+    --gradient-first: linear-gradient(150deg, #b8e6c7 15%, #c1e4f4 80%);
+    --gradient: linear-gradient(to right, #a0e2b3, #74a7e4);
+    --primary: #fff;
+    --secondary: #004aad;
+    --button-first: linear-gradient(to right, #0ac470, #096186);
+    --button-secondary: linear-gradient(to right, #34d69a, #3a84b3);
+}
+
+@media (min-width: 768px) {
+    .navbar-collapse {
+        display: flex !important;
+        /* Add this rule! */
+        justify-content: flex-end;
+    }
+}
+
+/**header**/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    z-index: 30;
+}
+
+/**estilos del logo**/
+.navbar-brand img {
+    padding-top: 15px;
+    width: 150px;
+    height: 80px;
+    margin-left: -4.5rem;
+}
+
+/**animacion expansiva del logo**/
+.navbar-brand img:hover {
+    transform: scale(1.2);
+}
+
+/** estilos del header**/
+.navbar {
+    background: var(--gradient);
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+/*estilos href*/
+a {
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#navbarNav {
+    margin-left: auto;
+}
+
+.navbar-nav {
+    list-style-type: none;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar-nav a:hover {
+    border-bottom: var(--secondary) solid;
+}
+
+.nav-item {
+    padding-bottom: 35px;
+    padding: 5px 12px 0;
+}
+
+.nav-link {
+    color: var(--primary);
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+#inicio {
+    color: var(--secondary);
+}
+
+.btn-contacto {
+    background: var(--button-first);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-contacto:hover {
+    background: var(--button-secondary);
+}

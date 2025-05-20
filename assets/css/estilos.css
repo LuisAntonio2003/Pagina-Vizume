@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --primary: #fff; /* Blanco */
+    --secondary: #004aad; /* Azul oscuro */
+    --button-first: linear-gradient(to right, #0ac470, #096186); /* Gradiente botón 1 */
+    --button-secondary: linear-gradient(to right, #34d69a, #3a84b3); /* Gradiente botón 2 */
+    --mission-bg-color: linear-gradient(90deg, #b8e6c7 15%, #c1e4f4 80%); /* Fondo para Misión (color claro o tu gradiente) */
+    --vision-bg-color: linear-gradient(90deg, #c1e4f4 15%, #b8e6c7 80%);
+ /* Fondo para Visión (color claro o tu gradiente) */
+    --text-color-dark: #333; /* Color oscuro para el texto */
+    --text-color-light: #fff; /* Color claro para el texto */
+    --light-bg-color: #f8f9fa; /* Color de fondo claro para secciones como info-empresa */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* SECCIÓN DE IMAGEN DE BOMBEROS (Hero Section) */
+.hero-image-section {
+    width: 100%;
+    height: 100vh; /* Ocupa la altura completa de la ventana */
+    background-image: url("/assets/img/IMAGEN-ILUSTRATIVA-PRINCIPAL.jpg"); /* La imagen de bomberos */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex; /* Para centrar contenido si lo añades */
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color-light); /* Para texto sobre la imagen */
+    text-align: center;
+    padding-top: 80px; /* Espacio para que el header fijo no tape la imagen */
+}
+
+.hero-image-section .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* SECCIÓN DE MISIÓN  */
+.mission-section {
+    width: 100%;
+    min-height: 400px;
+    padding: 80px 20px;
+    background: var(--mission-bg-color);
+    color: var(--text-color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SECCIÓN DE VISIÓN */
+.vision-section {
+    width: 100%;
+    min-height: 400px;
+    padding: 80px 20px;
+    background: var(--vision-bg-color); /* Fondo propio de la sección */
+    color: var(--text-color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor Flex para el texto y la imagen dentro de Misión/Visión */
+.content-wrapper {
+    display: flex;
+    align-items: center; /* Centra verticalmente items */
+    gap: 40px; /* Espacio entre el texto y la imagen */
+    max-width: 1200px; /* Ancho máximo para el contenido */
+    margin: 0 auto;
+    width: 100%; /* Asegura que ocupe el ancho completo del container */
+}
+
+.content-wrapper.reverse-order {
+    flex-direction: row-reverse; /* Invierte el orden de los elementos */
+}
+
+.text-column {
+    flex: 1; /* Ocupa el espacio restante */
+    text-align: left; /* Alineación del texto */
+}
+
+.image-column {
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+    width: 600px; /* Ancho fijo para la imagen lateral */
+    height: 300px; /* Altura fija para la imagen lateral */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.section-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--secondary);
+    text-align: center; /* Título centrado */
+    text-transform: uppercase;
+}
+
+.section-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: justify;
+}
+
+
+/* --- RESTO DE LA PÁGINA (ej. Nuestros Servicios) --- */
+.info-empresa {
+    padding: 50px 20px;
+    background-color: var(--light-bg-color); /* Fondo claro para esta sección */
+    text-align: center;
+    color: var(--text-color-dark);
+}
+
+.info-empresa h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: var(--secondary);
+}
+
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 992px) {
+    .hero-image-section {
+        height: 70vh; /* Ajusta la altura de la sección de la imagen */
+    }
+
+    .hero-image-section h1 {
+        font-size: 3rem;
+    }
+
+    .hero-image-section p {
+        font-size: 1.2rem;
+    }
+
+    .content-wrapper {
+        flex-direction: column; /* Apila el texto y la imagen en pantallas medianas/pequeñas */
+        gap: 20px;
+    }
+
+    .image-column {
+        width: 80%; /* Más ancho para la imagen en móviles */
+        height: 180px;
+        margin: 0 auto; /* Centra la imagen */
+    }
+
+    .text-column {
+        text-align: center; /* Centra el texto */
+    }
+
+    .section-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .mission-section,
+    .vision-section {
+        min-height: auto; /* La altura se ajusta al contenido */
+        padding: 40px 15px;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .section-text {
+        font-size: 1rem;
+    }
+}
