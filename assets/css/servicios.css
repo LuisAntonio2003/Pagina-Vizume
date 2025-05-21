@@ -1,0 +1,169 @@
+/*GAMA DE COLOREES*/
+:root {
+    --primary: #fff;
+    --secondary: #004aad;
+    --gradient: linear-gradient(to right, #a0e2b3, #74a7e4);
+    --button-first: linear-gradient(to right, #0ac470, #096186);
+    /* Gradiente botón 1 */
+    --button-secondary: linear-gradient(to right, #34d69a, #3a84b3);
+    /* Gradiente botón 2 */
+    --color-container-a: linear-gradient(90deg, #b8e6c7 15%, #c1e4f4 80%);
+    --color-container-b: linear-gradient(90deg, #c1e4f4 15%, #b8e6c7 80%);
+    --text-color-dark: #333;
+    --text-color-light: #fff;
+    --light-bg-color: #f8f9fa;
+    --close: #E01107;
+}
+
+/* Contenedor Flexbox para los servicios */
+.servicios-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1890px;
+    margin: 0 auto;
+}
+
+.servicio-card {
+    background: var(--color-container-b);/* Fondo degradado de la tarjeta */
+    width: calc((100% - (var(--gap-size) * 2)) / 3);
+    min-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;/* Para organizar el título y el contenedor de la imagen */
+    flex-direction: column;
+    overflow: hidden;/* Asegura que las esquinas redondeadas se vean bien */
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.servicio-card:hover {
+    border-color: var(--border-color);
+    /* Borde al pasar el mouse */
+}
+
+.servicio-titulo {
+    background: var(--color-container-b);
+    /* Fondo degradado para el título */
+    width: 100%;
+    padding: 15px 10px;
+    margin: 0;
+    /* Elimina márgenes predeterminados */
+    text-align: center;
+    color: var(--text-color-dark);
+    /* Color de texto para el título */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* Opcional: para que las esquinas del título no se redondeen si no quieres */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.servicio-imagen-container {
+    position: relative;
+    /* Para posicionar el botón absolutamente */
+    width: 100%;
+    height: 300px;
+    /* Altura fija para el contenedor de la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.servicio-imagen-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Asegura que la imagen cubra el contenedor */
+    display: block;
+}
+
+.consultar-btn {
+    position: absolute;
+    /* Posiciona el botón sobre la imagen */
+    bottom: 20px;
+    /* Distancia desde abajo */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centra el botón horizontalmente */
+    background: var(--button-first);
+    color: var(--button-text);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+    /* Asegura que el botón esté por encima de la imagen */
+}
+
+.consultar-btn:hover {
+    opacity: 0.9;
+    transform: translateX(-50%) translateY(-2px);
+    background: var(--button-secondary);
+    /* Pequeño efecto al pasar el mouse */
+}
+
+/* --- Estilos para los modales --- */
+.modal {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    /*display: flex;*/
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background:var(--primary);
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content h2 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    color: var(--close);
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--close);
+    text-decoration: none;
+}

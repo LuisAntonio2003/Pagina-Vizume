@@ -1,22 +1,29 @@
+/*estilos generales*/
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
+/*GAMA DE COLOREES*/
 :root {
-    --primary: #fff; /* Blanco */
-    --secondary: #004aad; /* Azul oscuro */
-    --button-first: linear-gradient(to right, #0ac470, #096186); /* Gradiente botón 1 */
-    --button-secondary: linear-gradient(to right, #34d69a, #3a84b3); /* Gradiente botón 2 */
-    --mission-bg-color: linear-gradient(90deg, #b8e6c7 15%, #c1e4f4 80%); /* Fondo para Misión (color claro o tu gradiente) */
-    --vision-bg-color: linear-gradient(90deg, #c1e4f4 15%, #b8e6c7 80%);
- /* Fondo para Visión (color claro o tu gradiente) */
-    --text-color-dark: #333; /* Color oscuro para el texto */
-    --text-color-light: #fff; /* Color claro para el texto */
-    --light-bg-color: #f8f9fa; /* Color de fondo claro para secciones como info-empresa */
+    --primary: #fff;
+    --secondary: #004aad;
+    --gradient: linear-gradient(to right, #a0e2b3, #74a7e4);
+    --button-first: linear-gradient(to right, #0ac470, #096186);
+    /* Gradiente botón 1 */
+    --button-secondary: linear-gradient(to right, #34d69a, #3a84b3);
+    /* Gradiente botón 2 */
+    --color-container-a: linear-gradient(90deg, #b8e6c7 15%, #c1e4f4 80%);
+    --color-container-b: linear-gradient(90deg, #c1e4f4 15%, #b8e6c7 80%);
+    --text-color-dark: #333;
+    --text-color-light: #fff;
+    --light-bg-color: #f8f9fa;
+    --card-bg-gradient: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 100%);
+    --close: #E01107;
 }
 
+/*CUERPO*/
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -26,18 +33,13 @@ body {
 /* SECCIÓN DE IMAGEN DE BOMBEROS (Hero Section) */
 .hero-image-section {
     width: 100%;
-    height: 100vh; /* Ocupa la altura completa de la ventana */
-    background-image: url("/assets/img/IMAGEN-ILUSTRATIVA-PRINCIPAL.jpg"); /* La imagen de bomberos */
+    height: 100vh;/* Ocupa la altura completa de la ventana */
+    background-image: url("/assets/img/IMAGEN-ILUSTRATIVA-PRINCIPAL.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    display: flex; /* Para centrar contenido si lo añades */
-    align-items: center;
-    justify-content: center;
-    color: var(--text-color-light); /* Para texto sobre la imagen */
-    text-align: center;
-    padding-top: 80px; /* Espacio para que el header fijo no tape la imagen */
+    padding-top: 80px;/* Espacio para que el header fijo no tape la imagen */
 }
 
 .hero-image-section .hero-content {
@@ -52,7 +54,7 @@ body {
     width: 100%;
     min-height: 400px;
     padding: 80px 20px;
-    background: var(--mission-bg-color);
+    background: var(--color-container-a);
     color: var(--text-color-dark);
     display: flex;
     align-items: center;
@@ -64,79 +66,94 @@ body {
     width: 100%;
     min-height: 400px;
     padding: 80px 20px;
-    background: var(--vision-bg-color); /* Fondo propio de la sección */
+    background: var(--color-container-b);
+    /* Fondo propio de la sección */
     color: var(--text-color-dark);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* SECCIÓN DE VALORES */
 .valores-section {
     width: 100%;
     min-height: 400px;
     padding: 80px 20px;
-    background: var(--mission-bg-color);
+    background: var(--color-container-a);
     color: var(--text-color-dark);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Contenedor Flex para el texto y la imagen dentro de Misión/Visión */
+/* Contenedor Flex para el texto y la imagen dentro de Misión/Visión/VALORES */
 .content-wrapper {
     display: flex;
-    align-items: center; /* Centra verticalmente items */
-    gap: 40px; /* Espacio entre el texto y la imagen */
-    max-width: 1200px; /* Ancho máximo para el contenido */
+    align-items: center;/* Centra verticalmente items */
+    gap: 40px;/* Espacio entre el texto y la imagen */
+    max-width: 1200px;/* Ancho máximo para el contenido */
     margin: 0 auto;
-    width: 100%; /* Asegura que ocupe el ancho completo del container */
+    width: 100%;/* Asegura que ocupe el ancho completo del container */
 }
 
 .content-wrapper.reverse-order {
-    flex-direction: row-reverse; /* Invierte el orden de los elementos */
+    flex-direction: row-reverse;
+    /* Invierte el orden de los elementos */
 }
 
 .text-column {
-    flex: 1; /* Ocupa el espacio restante */
-    text-align: left; /* Alineación del texto */
+    flex: 1;/* Ocupa el espacio restante */
+    text-align: left;/* Alineación del texto */
 }
 
-.image-column {
-    flex-shrink: 0; /* Evita que la imagen se encoja */
-    width: 600px; /* Ancho fijo para la imagen lateral */
-    height: 300px; /* Altura fija para la imagen lateral */
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+/* SOBRE NOSOTROS */
+.sobre-nosotros {
+    padding: 50px 20px;
+    background: var(--color-container-b);
+    /* Fondo claro para esta sección */
+    text-align: center;
+    color: var(--text-color-dark);
 }
 
-.section-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.section-title {
-    font-size: 2.8rem;
+.sobre-nosotros h2 {
     margin-bottom: 20px;
+    font-size: 2.5rem;
     color: var(--secondary);
-    text-align: center; /* Título centrado */
-    text-transform: uppercase;
 }
 
-.section-text {
-    font-size: 1.1rem;
-    line-height: 1.6;
+.section-text-sobre-nosotros {
+    font-size: 1.2rem;
+    line-height: 1.5;
     margin-bottom: 0;
     text-align: justify;
 }
 
+/* SECCIÓN DE IMAGEN TEAM */
+.hero-image2-section {
+    width: 97%;
+    height: 95vh;/* Ocupa la altura completa de la ventana */
+    background-image: url("/assets/img/equipo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding-top: 80px;
+    margin: 15 auto;
+    margin-left: 1.8rem;
+}
 
-/* --- RESTO DE LA PÁGINA (ej. Nuestros Servicios) --- */
+.hero-image2-section .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* servicios */
 .info-empresa {
     padding: 50px 20px;
-    background-color: var(--light-bg-color); /* Fondo claro para esta sección */
+    background: var(--color-container-a);
+    /* Fondo claro para esta sección */
     text-align: center;
     color: var(--text-color-dark);
 }
@@ -147,10 +164,12 @@ body {
     color: var(--secondary);
 }
 
+
 /* --- Media Queries para Responsividad --- */
 @media (max-width: 992px) {
     .hero-image-section {
-        height: 70vh; /* Ajusta la altura de la sección de la imagen */
+        height: 70vh;
+        /* Ajusta la altura de la sección de la imagen */
     }
 
     .hero-image-section h1 {
@@ -162,35 +181,76 @@ body {
     }
 
     .content-wrapper {
-        flex-direction: column; /* Apila el texto y la imagen en pantallas medianas/pequeñas */
+        flex-direction: column;
+        /* Apila el texto y la imagen en pantallas medianas/pequeñas */
         gap: 20px;
     }
 
     .image-column {
-        width: 80%; /* Más ancho para la imagen en móviles */
+        width: 80%;
+        /* Más ancho para la imagen en móviles */
         height: 180px;
-        margin: 0 auto; /* Centra la imagen */
+        margin: 0 auto;
+        /* Centra la imagen */
     }
 
     .text-column {
-        text-align: center; /* Centra el texto */
+        text-align: center;
+        /* Centra el texto */
     }
 
     .section-title {
         text-align: center;
     }
+
+    /* Por ejemplo, para 2 columnas en tablets */
+    .servicio-card {
+        width: calc((100% - var(--gap-size)) / 2);
+        /* Ahora 2 tarjetas por fila */
+    }
 }
 
 @media (max-width: 768px) {
+
     .mission-section,
     .vision-section {
-        min-height: auto; /* La altura se ajusta al contenido */
+        min-height: auto;
+        /* La altura se ajusta al contenido */
         padding: 40px 15px;
     }
+
     .section-title {
         font-size: 2.2rem;
     }
+
     .section-text {
         font-size: 1rem;
+    }
+
+        /* Para 1 columna en móviles */
+    .servicios-container {
+        padding: 0 10px;
+        /* Reduce el padding en móviles */
+    }
+
+    .servicio-card {
+        width: 100%;
+        /* Una tarjeta por fila */
+        min-width: unset;
+        /* Reinicia el min-width */
+    }
+
+    .servicio-imagen-container {
+        height: 200px;
+        /* Un poco más pequeña que en desktop para móviles */
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.8rem;
     }
 }
