@@ -71,6 +71,17 @@ body {
     justify-content: center;
 }
 
+.valores-section {
+    width: 100%;
+    min-height: 400px;
+    padding: 80px 20px;
+    background: var(--mission-bg-color);
+    color: var(--text-color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Contenedor Flex para el texto y la imagen dentro de Misión/Visión */
 .content-wrapper {
     display: flex;
