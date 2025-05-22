@@ -8,7 +8,8 @@
     <title>Vizume</title>
 
     <!--Hoja de estilos-->
-    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/servicios.css">
 
     <!--Link para obtner acceso a boostrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -21,7 +22,7 @@
     <div id="header"></div>
 
     <!--Seccion de img principal-->
-    <section class="hero-image-section">
+    <section class="hero-image-section" id="hero-image-section">
         <div class="hero-content"></div>
     </section>
 
@@ -83,7 +84,7 @@
     </section>
 
     <!--Sobre Nosotros-->
-    <section class="sobre-nosotros">
+    <section class="sobre-nosotros" id="sobre-nosotros">
         <h2>SOBRE NOSOTROS</h2>
         <p class="section-text-sobre-nosostros">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus molestie nunc et eros
@@ -99,49 +100,71 @@
         </section>
     </section>
 
-    <!--LLAMADO DE LOS SERVICIOS-->
+    <!-- SECCIÓN DE SERVICIOS Y PORTAFOLIO -->
     <main>
-        <div id="servicios-section-container"></div>
+        <!--SECCIÓN DE SERVICIOS-->
+        <section id="servicios-section" class="info-empresa">
+            <h2>Nuestros Servicios</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A voluptates magnam ut veritatis temporibus
+                iusto optio corporis, asperiores dignissimos porro recusandae assumenda, vitae atque doloremque enim
+                possimus odio id eveniet.</p>
+            <div id="servicios-cards-container"></div>
+        </section>
+
+        <!--SECCIÓN DE PORTAFOLIO-->
+        <section id="portafolio-section" class="portafolio">
+            <h2>Portafolio y Casos de Éxito</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A voluptates magnam ut veritatis temporibus
+                iusto optio corporis, asperiores dignissimos porro recusandae assumenda, vitae atque doloremque enim
+                possimus odio id eveniet.</p>
+            <div id="portafolio-cards-container"></div>
+        </section>
     </main>
 
-    <!--Scripts para el llamado del header, servicios y uso de boostrap-->
+    <button id="scrollToTopBtn" class="scroll-to-top-btn" title="Volver al inicio">
+        &#x2191;
+    </button>
+
+    <!--SCRIPT PARA EL LLAMADO DEL ARREGLO DE SERVICIOS Y PORTAFOLIO -->
+    <script src="assets/js/Servicios-y-Portafolio.js"></script>
+
+    <!--SCRIPT PARA EL LLAMADO PARA GENERAR TARJETAS -->
+    <script src="assets/js/Generador-tarjetas.js"></script>
+
+    <!--SCRIPT PARA EL LLAMADO DEL HEADER -->
     <script>
-        // Función para cargar contenido HTML de un archivo externo
-        function loadHTML(selector, url, callback) {
-            fetch(url)
+        document.addEventListener('DOMContentLoaded', () => {
+            // Carga el header
+            fetch('config/Header.html')
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error('Network response was not ok ' + response.statusText);
+                        throw new Error('Network response for header was not ok ' + response.statusText);
                     }
                     return response.text();
                 })
-                .then(html => {
-                    document.getElementById(selector).innerHTML = html;
-                    if (callback) {
-                        callback(); // Ejecuta el callback si se proporciona
-                    }
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                    const bootstrapScript = document.createElement('script');
+                    bootstrapScript.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js';
+                    bootstrapScript.integrity = 'sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL';
+                    bootstrapScript.crossOrigin = 'anonymous';
+                    document.body.appendChild(bootstrapScript);
                 })
-                .catch(error => {
-                    console.error(`Error al cargar el archivo ${url}:`, error);
-                });
-        }
+                .catch(error => console.error('Error al cargar el header:', error));
 
-        // Se ejecuta cuando el DOM inicial de index.html ha sido cargado
-        document.addEventListener('DOMContentLoaded', () => {
-            // Carga el header
-            loadHTML('header', 'config/header.html', () => {
-                const script = document.createElement('script');
-                script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js';
-                script.integrity = 'sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL';
-                script.crossOrigin = 'anonymous';
-                document.body.appendChild(script);
-            });
-            loadHTML('servicios-section-container', 'config/servicios.html', initializeModals);
+            // Llama a la función para generar las tarjetas de servicios
+            generateCards('servicios-cards-container', servicesData);
+
+            // Llama a la función para generar las tarjetas de portafolio
+            generateCards('portafolio-cards-container', portfolioData);
+
+            // Inicializa los modales
+            initializeModals();
+
+            //Inicializa la funcionalidad del botón "Volver al Inicio"
+            initializeScrollToTopButton();
         });
     </script>
-
-    <!--Script para el uso de -->
-    <script src="assets/js/script.js"></script>
 
 </body> <!--Fin del Body-->
 
