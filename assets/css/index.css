@@ -52,45 +52,33 @@ body::-webkit-scrollbar {
 .hero-image-section .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 900px;
+    max-width: 90%;
     margin: 0 auto;
 }
 
-/* SECCIÓN DE MISIÓN  */
-.mission-section {
+/* SECCIONES DE MISIÓN, VISIÓN, VALORES */
+.mission-section, .vision-section, .valores-section {
     width: 100%;
     min-height: 400px;
     padding: 80px 20px;
-    background: var(--color-container-a);
     color: var(--text-color-dark);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.mission-section {
+    background: var(--color-container-a);
 }
 
 /* SECCIÓN DE VISIÓN */
 .vision-section {
-    width: 100%;
-    min-height: 400px;
-    padding: 80px 20px;
     background: var(--color-container-b);
-    /* Fondo propio de la sección */
-    color: var(--text-color-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /* SECCIÓN DE VALORES */
 .valores-section {
-    width: 100%;
-    min-height: 400px;
-    padding: 80px 20px;
     background: var(--color-container-a);
-    color: var(--text-color-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /* Contenedor Flex para el texto y la imagen dentro de Misión/Visión/VALORES */
@@ -101,6 +89,7 @@ body::-webkit-scrollbar {
     max-width: 1200px;/* Ancho máximo para el contenido */
     margin: 0 auto;
     width: 100%;/* Asegura que ocupe el ancho completo del container */
+    padding: 0 15px;
 }
 
 .content-wrapper.reverse-order {
@@ -111,6 +100,34 @@ body::-webkit-scrollbar {
 .text-column {
     flex: 1;/* Ocupa el espacio restante */
     text-align: left;/* Alineación del texto */
+}
+
+.image-column {
+    flex: 1; /* Ocupa el espacio restante */
+    display: flex; /* Para centrar la imagen dentro de la columna */
+    justify-content: center;
+    align-items: center;
+}
+
+.section-image {
+    max-width: 100%; /* Asegura que la imagen no se desborde */
+    height: auto; /* Mantiene la proporción */
+    display: block; /* Elimina espacio extra debajo de la imagen */
+    border-radius: 8px; /* Opcional: bordes redondeados para las imágenes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: sombra para las imágenes */
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--secondary);
+    text-align: left; /* Por defecto alineado a la izquierda */
+}
+
+.section-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
 }
 
 /* SOBRE NOSOTROS */
@@ -134,6 +151,9 @@ body::-webkit-scrollbar {
     line-height: 1.5;
     margin-bottom: 0;
     text-align: justify;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* SECCIÓN DE IMAGEN TEAM */
@@ -147,6 +167,7 @@ body::-webkit-scrollbar {
     position: relative;
     padding-top: 80px;
     margin: 15 auto;
+    border-radius: 8px;
     margin-left: 1.8rem;
 }
 
@@ -157,38 +178,37 @@ body::-webkit-scrollbar {
     margin: 0 auto;
 }
 
-/* servicios */
+/* SECCIÓN DE SERVICIOS Y PROTAFOLIO */
+.info-empresa, .portafolio {
+    padding: 50px 20px;
+    text-align: center;
+    color: var(--text-color-dark);
+}
+
 .info-empresa {
-    padding: 50px 20px;
     background: var(--color-container-a);
-    /* Fondo claro para esta sección */
-    text-align: center;
-    color: var(--text-color-dark);
 }
 
-.info-empresa h2 {
-    margin-bottom: 20px;
-    font-size: 2.5rem;
-    color: var(--secondary);
-    margin-top: 5rem;
-}
-
-/* portafolio */
 .portafolio {
-    padding: 50px 20px;
     background: var(--color-container-b);
-    /* Fondo claro para esta sección */
-    text-align: center;
-    color: var(--text-color-dark);
 }
 
-/* boton emergente flotante */
-.portafolio h2 {
+.info-empresa h2, .portafolio h2 {
     margin-bottom: 20px;
     font-size: 2.5rem;
     color: var(--secondary);
     margin-top: 5rem;
 }
+
+
+.info-empresa p,
+.portafolio p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto 30px; /* Centra el párrafo y le da margen inferior */
+}
+/* boton emergente flotante */
 
 .scroll-to-top-btn {
     display: none;
@@ -304,4 +324,203 @@ body::-webkit-scrollbar {
     .modal-content h2 {
         font-size: 1.8rem;
     }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 575.98px) {
+    .hero-image-section {
+        height: 60vh; /* Menos altura en móviles muy pequeños */
+        padding-top: 60px; /* Ajusta el padding para el header */
+    }
+
+    .hero-image-section .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-image-section .hero-content p {
+        font-size: 1rem;
+    }
+
+    .mission-section,
+    .vision-section,
+    .valores-section,
+    .sobre-nosotros,
+    .info-empresa,
+    .portafolio {
+        min-height: auto; /* La altura se ajusta al contenido */
+        padding: 40px 15px; /* Reduce el padding general */
+    }
+
+    .content-wrapper {
+        flex-direction: column; /* Apila columnas */
+        gap: 30px;
+        padding: 0 10px; /* Más padding para los bordes */
+    }
+
+    .content-wrapper.reverse-order {
+        flex-direction: column; /* Asegura que se apile también */
+    }
+
+    .section-title {
+        font-size: 2rem;
+        text-align: center; /* Centra los títulos de sección en móviles */
+    }
+
+    .section-text,
+    .section-text-sobre-nosostros,
+    .info-empresa p,
+    .portafolio p {
+        font-size: 0.95rem; /* Tamaño de fuente más pequeño */
+        text-align: justify; /* Mantiene la justificación para bloques de texto */
+    }
+
+    .image-column {
+        width: 100%; /* La imagen ocupa todo el ancho */
+        height: auto; /* Altura automática */
+    }
+
+    .section-image {
+        max-width: 90%; /* Asegura que la imagen no toque los bordes del móvil */
+    }
+
+    .sobre-nosotros h2,
+    .info-empresa h2,
+    .portafolio h2 {
+        font-size: 2rem;
+        margin-top: 3rem; /* Reduce el margen superior */
+    }
+
+    .hero-image2-section {
+        height: 60vh; /* Ajusta la altura de la imagen del equipo */
+        width: 95%; /* Asegura que no se desborde */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #servicios-cards-container,
+    #portafolio-cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* Espacio entre las tarjetas */
+        padding: 0 10px; /* Padding para el contenedor de tarjetas */
+    }
+
+    .servicio-card { /* Asumiendo que esta es la clase de tus tarjetas */
+        width: 100%; /* Una tarjeta por fila en móviles */
+        max-width: 300px; /* Un máximo para que no se estiren demasiado en iPads pequeños */
+        margin: 0 auto; /* Centra las tarjetas si hay pocas */
+    }
+}
+
+/* Small devices (phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .hero-image-section {
+        height: 70vh;
+    }
+    .valores-section {
+        padding: 50px 20px; /* Ajusta padding */
+    }
+
+    .content-wrapper {
+        flex-direction: column; /* Mantiene la disposición en columna para tablets pequeñas */
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .content-wrapper.reverse-order {
+        flex-direction: column;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .section-text {
+        font-size: 1rem;
+    }
+    .hero-image2-section {
+        height: 70vh;
+    }
+    .servicio-card {
+        width: calc(50% - 15px); /* Dos tarjetas por fila con un pequeño espacio */
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .hero-image-section {
+        height: 80vh;
+    }
+    .valores-section {
+        padding: 60px 20px;
+    }
+
+    .content-wrapper {
+        flex-direction: row; /* Vuelve a la disposición horizontal (texto e imagen lado a lado) */
+        gap: 40px;
+    }
+
+    .content-wrapper.reverse-order {
+        flex-direction: row-reverse; /* Si tiene la clase, vuelve al orden inverso horizontal */
+    }
+    .section-title {
+        font-size: 2.5rem;
+        text-align: left; /* Vuelve a la alineación izquierda */
+    }
+    .section-text {
+        font-size: 1.1rem;
+    }
+    .hero-image2-section {
+        height: 80vh;
+    }
+    /* Estilos para tarjetas en tablets (ej. 3 columnas) */
+    .servicio-card {
+        width: calc(33.33% - 20px); /* Tres tarjetas por fila */
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .hero-image-section {
+        height: 100vh;
+    }
+    .hero-image-section .hero-content h1 {
+        font-size: 3.5rem;
+    }
+    .hero-image-section .hero-content p {
+        font-size: 1.5rem;
+    }
+    .content-wrapper {
+        flex-direction: row;
+        gap: 40px;
+    }
+    .content-wrapper.reverse-order {
+        flex-direction: row-reverse;
+    }
+    .section-title {
+        font-size: 2.5rem;
+        text-align: left;
+    }
+    .section-text {
+        font-size: 1.1rem;
+    }
+    .hero-image2-section {
+        height: 95vh;
+        width: 97%;
+        margin-left: 1.8rem; /* Reestablece el margen si lo modificaste */
+    }
+    /* Estilos para tarjetas en desktop (ej. 4 columnas o más) */
+    .servicio-card {
+        width: calc(25% - 22.5px); /* Cuatro tarjetas por fila (ajusta el gap si es diferente) */
+    }
+}
+
+/* Estilos para los títulos y párrafos */
+h2 {
+    font-family: 'Arial Black', sans-serif; /* Ejemplo de fuente, usa la que prefieras */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    font-family: Arial, sans-serif;
 }

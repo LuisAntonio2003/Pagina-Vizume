@@ -5,14 +5,74 @@
     margin: 0;
 }
 
-/**Gama de colores**/
-:root {
-    --gradient-first: linear-gradient(150deg, #b8e6c7 15%, #c1e4f4 80%);
-    --gradient: linear-gradient(to right, #a0e2b3, #74a7e4);
-    --primary: #fff;
-    --secondary: #004aad;
-    --button-first: linear-gradient(to right, #0ac470, #096186);
-    --button-secondary: linear-gradient(to right, #34d69a, #3a84b3);
+/* Media query para pantallas pequeñas (hasta 767px, ya que md es 768px) */
+@media (max-width: 767px) {
+    .navbar-brand img {
+        /* Ajusta el tamaño del logo para pantallas más pequeñas */
+        width: 120px;
+        height: auto;
+        margin-left: 0;
+        padding-top: 10px;
+    }
+
+    .navbar-toggler {
+        display: block;
+        margin-right: 15px;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .nav-item {
+        padding: 10px 0;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+
+    .btn-contacto {
+        width: 80%;
+        margin: 15px auto;
+        display: block;
+    }
+    .navbar-brand img:hover {
+        transform: none;
+    }
+}
+
+/* El media query para min-width: 768px ya es correcto para pantallas medianas y grandes */
+@media (min-width: 768px) {
+    .navbar-collapse {
+        display: flex !important;
+        justify-content: flex-end;
+    }
+
+    /* Reestablecer estilos para pantallas grandes si fueron modificados en mobile */
+    .navbar-brand img {
+        width: 150px;
+        height: 80px;
+        margin-left: -4.5rem;
+        padding-top: 15px;
+    }
+
+    .nav-link {
+        font-size: 20px;
+    }
+
+    .btn-contacto {
+        width: auto;
+        margin: 0;
+        display: inline-flex;
+    }
 }
 
 @media (min-width: 768px) {
@@ -21,6 +81,16 @@
         /* Add this rule! */
         justify-content: flex-end;
     }
+}
+
+/**Gama de colores**/
+:root {
+    --gradient-first: linear-gradient(150deg, #b8e6c7 15%, #c1e4f4 80%);
+    --gradient: linear-gradient(to right, #a0e2b3, #74a7e4);
+    --primary: #fff;
+    --secondary: #004aad;
+    --button-first: linear-gradient(to right, #0ac470, #096186);
+    --button-secondary: linear-gradient(to right, #34d69a, #3a84b3);
 }
 
 /**header**/

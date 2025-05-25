@@ -13,6 +13,8 @@
     --text-color-light: #fff;
     --light-bg-color: #f8f9fa;
     --close: #E01107;
+
+    --gap-size:25px;
 }
 
 /* Ocultar barra de desplazamiento para navegadores basados en WebKit (Chrome, Safari) */
@@ -32,16 +34,17 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
+    gap: var(--gap-size);
     max-width: 1890px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 .servicio-card {
     background: var(--color-container-b);
     /* Fondo degradado de la tarjeta */
     width: calc((100% - (var(--gap-size) * 2)) / 3);
-    min-width: 400px;
+    min-width: 320px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -108,7 +111,7 @@ body {
     transform: translateX(-50%);
     /* Centra el botón horizontalmente */
     background: var(--button-first);
-    color: var(--button-text);
+    color: var(--primary);
     padding: 12px 30px;
     border: none;
     border-radius: 25px;
@@ -182,6 +185,160 @@ body {
 
 .close-btn:hover,
 .close-btn:focus {
-    color: var(--close);
+    color: darken(var(--close), 10%); /* Oscurece el color al pasar el mouse */
     text-decoration: none;
+}
+
+/* KEYFRAMES para la animación del modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Media Queries para Responsividad --- */
+
+/* Extra small devices (phones, portrait and landscape, < 576px) */
+@media (max-width: 575.98px) {
+    .servicios-container {
+        padding: 15px; /* Reduce el padding en móviles */
+    }
+
+    .servicio-card {
+        width: 100%; /* Una sola tarjeta por fila */
+        min-width: unset; /* Permite que la tarjeta se encoja más */
+        margin: 0 auto; /* Centra la tarjeta */
+        min-height: auto; /* Altura se ajusta al contenido */
+    }
+
+    .servicio-titulo {
+        font-size: 1rem; /* Reduce el tamaño del título */
+        padding: 10px 5px;
+    }
+
+    .servicio-imagen-container {
+        height: 200px; /* Reduce la altura de la imagen */
+    }
+
+    .consultar-btn {
+        padding: 10px 20px; /* Reduce el tamaño del padding del botón */
+        font-size: 0.9rem; /* Reduce el tamaño del texto del botón */
+        bottom: 15px; /* Ajusta la posición del botón */
+    }
+
+    .modal-content {
+        width: 95%; /* El modal ocupa casi todo el ancho */
+        padding: 20px; /* Reduce el padding del modal */
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem; /* Reduce el tamaño del título del modal */
+        margin-bottom: 15px;
+    }
+
+    .modal-content p {
+        font-size: 0.9rem; /* Reduce el tamaño del texto del modal */
+    }
+
+    .close-btn {
+        font-size: 30px; /* Ajusta el tamaño del botón de cerrar */
+        top: 10px;
+        right: 15px;
+    }
+}
+
+/* Small devices (phones in landscape, tablets portrait, 576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .servicios-container {
+        padding: 20px;
+        gap: 20px; /* Ajusta el gap */
+    }
+
+    .servicio-card {
+        width: calc(50% - 10px); /* Dos tarjetas por fila con un pequeño gap */
+        min-width: 280px; /* Un min-width razonable para 2 columnas */
+        min-height: 450px; /* Puedes ajustarlo si es necesario */
+    }
+
+    .servicio-titulo {
+        font-size: 1.1rem;
+    }
+
+    .servicio-imagen-container {
+        height: 220px;
+    }
+
+    .consultar-btn {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+    }
+
+    .modal-content {
+        width: 85%;
+        max-width: 500px;
+    }
+}
+
+/* Medium devices (tablets landscape, small desktops, 768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .servicios-container {
+        padding: 25px;
+        gap: 25px;
+    }
+
+    .servicio-card {
+        width: calc((100% - (var(--gap-size) * 2)) / 3); /* Vuelve a 3 tarjetas por fila */
+        min-width: 250px; /* Asegura un tamaño mínimo */
+        min-height: 460px;
+    }
+
+    .servicio-titulo {
+        font-size: 1.2rem;
+    }
+
+    .servicio-imagen-container {
+        height: 240px;
+    }
+
+    .consultar-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        width: 80%;
+        max-width: 550px;
+    }
+}
+
+/* Large devices (desktops, 992px - 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .servicios-container {
+        gap: 25px;
+        /* Puedes ajustar el gap si es necesario */
+    }
+
+    .servicio-card {
+        width: calc((100% - (var(--gap-size) * 2)) / 3);
+        /* 3 tarjetas por fila */
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .servicios-container {
+        gap: 25px;
+        /* Puedes ajustar el gap */
+    }
+
+    .servicio-card {
+        width: calc((100% - (var(--gap-size) * 3)) / 4);
+        /* 4 tarjetas por fila en pantallas muy grandes */
+        min-width: 280px; /* Asegura que no se hagan demasiado pequeñas */
+    }
 }
