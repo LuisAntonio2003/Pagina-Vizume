@@ -28,25 +28,30 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
-     scrollbar-width: none; /* Oculta la barra de desplazamiento */
-    -ms-overflow-style: none; /* Oculta la barra de desplazamiento para IE/Edge */
+    scrollbar-width: none;
+    /* Oculta la barra de desplazamiento */
+    -ms-overflow-style: none;
+    /* Oculta la barra de desplazamiento para IE/Edge */
 }
 
 /* Ocultar barra de desplazamiento para navegadores basados en WebKit (Chrome, Safari) */
 body::-webkit-scrollbar {
-    display: none; /* Oculta completamente el scrollbar */
+    display: none;
+    /* Oculta completamente el scrollbar */
 }
 
 /* SECCIÓN DE IMAGEN DE BOMBEROS (Hero Section) */
 .hero-image-section {
     width: 100%;
-    height: 100vh;/* Ocupa la altura completa de la ventana */
+    height: 100vh;
+    /* Ocupa la altura completa de la ventana */
     background-image: url("/assets/img/IMAGEN-ILUSTRATIVA-PRINCIPAL.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    padding-top: 80px;/* Espacio para que el header fijo no tape la imagen */
+    padding-top: 80px;
+    /* Espacio para que el header fijo no tape la imagen */
 }
 
 .hero-image-section .hero-content {
@@ -57,7 +62,9 @@ body::-webkit-scrollbar {
 }
 
 /* SECCIONES DE MISIÓN, VISIÓN, VALORES */
-.mission-section, .vision-section, .valores-section {
+.mission-section,
+.vision-section,
+.valores-section {
     width: 100%;
     min-height: 400px;
     padding: 80px 20px;
@@ -84,11 +91,15 @@ body::-webkit-scrollbar {
 /* Contenedor Flex para el texto y la imagen dentro de Misión/Visión/VALORES */
 .content-wrapper {
     display: flex;
-    align-items: center;/* Centra verticalmente items */
-    gap: 40px;/* Espacio entre el texto y la imagen */
-    max-width: 1200px;/* Ancho máximo para el contenido */
+    align-items: center;
+    /* Centra verticalmente items */
+    gap: 40px;
+    /* Espacio entre el texto y la imagen */
+    max-width: 1200px;
+    /* Ancho máximo para el contenido */
     margin: 0 auto;
-    width: 100%;/* Asegura que ocupe el ancho completo del container */
+    width: 100%;
+    /* Asegura que ocupe el ancho completo del container */
     padding: 0 15px;
 }
 
@@ -98,30 +109,40 @@ body::-webkit-scrollbar {
 }
 
 .text-column {
-    flex: 1;/* Ocupa el espacio restante */
-    text-align: left;/* Alineación del texto */
+    flex: 1;
+    /* Ocupa el espacio restante */
+    text-align: left;
+    /* Alineación del texto */
 }
 
 .image-column {
-    flex: 1; /* Ocupa el espacio restante */
-    display: flex; /* Para centrar la imagen dentro de la columna */
+    flex: 1;
+    /* Ocupa el espacio restante */
+    display: flex;
+    /* Para centrar la imagen dentro de la columna */
     justify-content: center;
     align-items: center;
 }
 
 .section-image {
-    max-width: 100%; /* Asegura que la imagen no se desborde */
-    height: auto; /* Mantiene la proporción */
-    display: block; /* Elimina espacio extra debajo de la imagen */
-    border-radius: 8px; /* Opcional: bordes redondeados para las imágenes */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: sombra para las imágenes */
+    max-width: 100%;
+    /* Asegura que la imagen no se desborde */
+    height: auto;
+    /* Mantiene la proporción */
+    display: block;
+    /* Elimina espacio extra debajo de la imagen */
+    border-radius: 8px;
+    /* Opcional: bordes redondeados para las imágenes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Opcional: sombra para las imágenes */
 }
 
 .section-title {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: var(--secondary);
-    text-align: left; /* Por defecto alineado a la izquierda */
+    text-align: left;
+    /* Por defecto alineado a la izquierda */
 }
 
 .section-text {
@@ -159,7 +180,8 @@ body::-webkit-scrollbar {
 /* SECCIÓN DE IMAGEN TEAM */
 .hero-image2-section {
     width: 97%;
-    height: 95vh;/* Ocupa la altura completa de la ventana */
+    height: 95vh;
+    /* Ocupa la altura completa de la ventana */
     background-image: url("/assets/img/equipo.jpg");
     background-size: cover;
     background-position: center;
@@ -179,7 +201,8 @@ body::-webkit-scrollbar {
 }
 
 /* SECCIÓN DE SERVICIOS Y PROTAFOLIO */
-.info-empresa, .portafolio {
+.info-empresa,
+.portafolio {
     padding: 50px 20px;
     text-align: center;
     color: var(--text-color-dark);
@@ -193,7 +216,9 @@ body::-webkit-scrollbar {
     background: var(--color-container-b);
 }
 
-.info-empresa h2, .portafolio h2, .contact-title{
+.info-empresa h2,
+.portafolio h2,
+.contact-title {
     margin-bottom: 20px;
     font-size: 2.5rem;
     color: var(--secondary);
@@ -206,28 +231,33 @@ body::-webkit-scrollbar {
     font-size: 1.1rem;
     line-height: 1.6;
     max-width: 900px;
-    margin: 0 auto 30px; /* Centra el párrafo y le da margen inferior */
+    margin: 0 auto 30px;
+    /* Centra el párrafo y le da margen inferior */
 }
 
 /* CONTACT SECTION */
 .contact-section {
-    background: var(--color-container-a); /* Gradient background from image */
+    background: var(--color-container-a);
+    /* Gradient background from image */
     padding: 50px 20px;
     text-align: center;
 }
 
 .contact-container {
     display: flex;
-    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+    flex-wrap: wrap;
+    /* Allows columns to wrap on smaller screens */
     justify-content: center;
-    gap: 40px; /* Space between columns */
+    gap: 40px;
+    /* Space between columns */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .contact-form-column,
 .contact-info-column {
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white background for cards */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Slightly transparent white background for cards */
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -247,7 +277,8 @@ body::-webkit-scrollbar {
 .contact-form label {
     font-weight: bold;
     margin-bottom: 8px;
-    color: var(--text-color-dark); /* White text for labels */
+    color: var(--text-color-dark);
+    /* White text for labels */
 }
 
 .contact-form input[type="text"],
@@ -257,13 +288,16 @@ body::-webkit-scrollbar {
     margin-bottom: 20px;
     border: none;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.8); /* Slightly opaque white input fields */
-    color: var(--text-color-dark); /* Dark text in input fields */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Slightly opaque white input fields */
+    color: var(--text-color-dark);
+    /* Dark text in input fields */
     font-size: 1em;
 }
 
 .contact-form textarea {
-    resize: vertical; /* Allow vertical resizing of textarea */
+    resize: vertical;
+    /* Allow vertical resizing of textarea */
 }
 
 .contact-form input::placeholder,
@@ -272,7 +306,8 @@ body::-webkit-scrollbar {
 }
 
 .submit-button {
-    background: var(--button-first); /* Green button as in the image */
+    background: var(--button-first);
+    /* Green button as in the image */
     color: var(--primary);
     padding: 15px 25px;
     border: none;
@@ -285,7 +320,8 @@ body::-webkit-scrollbar {
 }
 
 .submit-button:hover {
-    background: var(--button-secondary) /* Darker green on hover */
+    background: var(--button-secondary)
+        /* Darker green on hover */
 }
 
 .contact-info-column {
@@ -298,34 +334,42 @@ body::-webkit-scrollbar {
 .contact-info-column h3 {
     font-size: 1.4em;
     margin-bottom: 15px;
-    color: var(--text-color-dark); /* White text for subheadings */
+    color: var(--text-color-dark);
+    /* White text for subheadings */
     font-weight: bold;
 }
 
 .contact-info-column p {
     margin-bottom: 8px;
     font-size: 1.1em;
-    color: var(--text-color-dark); /* White text for info */
+    color: var(--text-color-dark);
+    /* White text for info */
 }
 
 .contact-map {
     margin-top: 20px;
     border-radius: 10px;
-    overflow: hidden; /* Ensures the iframe corners are rounded */
+    overflow: hidden;
+    /* Ensures the iframe corners are rounded */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .contact-map iframe {
-    width: 100%; /* Ensure iframe takes full width of its container */
-    height: 200px; /* Fixed height for consistency */
-    border: 0; /* Remove default iframe border */
-    border-radius: 10px; /* Apply border-radius to the iframe itself */
+    width: 100%;
+    /* Ensure iframe takes full width of its container */
+    height: 200px;
+    /* Fixed height for consistency */
+    border: 0;
+    /* Remove default iframe border */
+    border-radius: 10px;
+    /* Apply border-radius to the iframe itself */
 }
 
 .social-media-text {
     margin-top: 50px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1); /* Lighter background for social media text */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Lighter background for social media text */
     border-radius: 10px;
 }
 
@@ -342,28 +386,33 @@ body::-webkit-scrollbar {
 }
 
 .social-icon {
-    width: 50px; /* Adjust size as needed */
-    height: 50px; /* Adjust size as needed */
+    width: 50px;
+    /* Adjust size as needed */
+    height: 50px;
+    /* Adjust size as needed */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 50%; /* Makes the icons circular */
+    border-radius: 50%;
+    /* Makes the icons circular */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slight shadow for icons */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Slight shadow for icons */
 }
 
 /* Replace with actual image paths for your social media icons */
 .social-icon.facebook {
-    background-image: url('/assets/img/facebook.png'); 
+    background-image: url('/assets/img/facebook.png');
 }
 
 .social-icon.instagram {
-    background-image: url('/assets/img/instagram.png'); 
+    background-image: url('/assets/img/instagram.png');
 }
 
 .social-icon:hover {
-    transform: translateY(-5px) scale(1.05); /* Slight lift and scale on hover */
+    transform: translateY(-5px) scale(1.05);
+    /* Slight lift and scale on hover */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -372,27 +421,154 @@ body::-webkit-scrollbar {
 .scroll-to-top-btn {
     display: none;
     position: fixed;
-    bottom: 20px;
-    right: 30px;
+    bottom: 15px;
+    right: 80px;
     z-index: 99;
     border: none;
     outline: none;
     background: var(--color-container-b);
-    color: var(--primary); /* Color del texto/flecha */
-    cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+    color: var(--primary);
+    /* Color del texto/flecha */
+    cursor: pointer;
+    /* Cambia el cursor a una mano al pasar por encima */
     padding: 15px;
-    width: 50px;   /* Ancho fijo para que sea un círculo */
-    height: 50px;  /* Alto fijo igual al ancho */
-    border-radius: 50%; /* Esto crea un círculo perfecto */
-    font-size: 1.5em; /* Tamaño de la flecha */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
-    transition: background-color 0.3s, transform 0.3s, opacity 0.3s; /* Añade transición para la opacidad */
-    opacity: 0.7; /* Transparencia inicial del 70% */
+    width: 50px;
+    /* Ancho fijo para que sea un círculo */
+    height: 50px;
+    /* Alto fijo igual al ancho */
+    border-radius: 50%;
+    /* Esto crea un círculo perfecto */
+    font-size: 1.5em;
+    /* Tamaño de la flecha */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra para profundidad */
+    transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
+    /* Añade transición para la opacidad */
+    opacity: 0.7;
+    /* Transparencia inicial del 70% */
 }
 
 .scroll-to-top-btn:hover {
     opacity: 0.5;
-    transform: scale(1.05); /* Ligeramente más grande al pasar el ratón */
+    transform: scale(1.05);
+    /* Ligeramente más grande al pasar el ratón */
+}
+
+/* Estilos para el Footer */
+.footer {
+    background: var(--gradient);
+    /* Dark background for the very bottom part */
+    color: var(--text-color-light);
+    /* White text for the copyright */
+    padding: 40px 20px;
+    /* Espaciado interno */
+    line-height: 1.5;
+    text-align: center;
+}
+
+.footer .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer p {
+    margin-bottom: 0;
+    font-size: 1.3rem;
+}
+
+/* NEW: Styles for the integrated social media info section within the footer */
+.footer .social-media-info {
+    width: 100%;
+    border-radius: 10px;
+    /* Slightly rounded corners */
+    color: var(--text-color-light);
+    /* Dark text for this section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer .social-media-info p {
+    font-size: 1.2em;
+    /* Larger font size for the message */
+    margin-bottom: 25px;
+    /* Space between text and icons */
+    font-weight: 500;
+    max-width: 800px;
+    /* Constrain text width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ensure the social icons within the footer's social-media-info section are styled correctly */
+.footer .social-media-info .social-icons {
+    margin-top: 0;
+    /* Override any previous margin-top */
+    gap: 25px;
+    /* Keep the original gap */
+}
+
+.footer .social-icon {
+    /* These apply to the <a> tag which has the background image */
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer .social-icon.facebook {
+    background-image: url('/assets/img/facebook.png');
+}
+
+.footer .social-icon.instagram {
+    background-image: url('/assets/img/instagram.png');
+}
+
+.footer .social-icon:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para el contenedor flotante (el 'a' con la nueva clase 'whatsapp-btn-float') */
+.whatsapp-btn-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 10px; /* Para que esté encima del botón de subir */
+    right: 10px;
+    background-color: #25D366; /* Color de fondo de WhatsApp */
+    color: #FFF; /* Color del icono (blanco) */
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px; /* Tamaño del icono Font Awesome */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* Asegura que esté por encima de otros elementos (mayor que el de subir) */
+    display: flex; /* Para centrar el icono dentro */
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-btn-float img{
+    width: 55px;
+    height: 55px;
+}
+
+/* Estilos para el icono Font Awesome dentro (ya no se necesita .my-float) */
+.whatsapp-btn-float i {
+    /* Si necesitas ajustes específicos para el icono, los pones aquí.
+       Generalmente, con `display: flex` en el padre, no necesitas `line-height` ni nada extra para centrarlo. */
+}
+
+.whatsapp-btn-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* --- Media Queries para Responsividad --- */
@@ -457,7 +633,7 @@ body::-webkit-scrollbar {
         font-size: 1rem;
     }
 
-        /* Para 1 columna en móviles */
+    /* Para 1 columna en móviles */
     .servicios-container {
         padding: 0 10px;
         /* Reduce el padding en móviles */
@@ -483,13 +659,30 @@ body::-webkit-scrollbar {
     .modal-content h2 {
         font-size: 1.8rem;
     }
+
+    .whatsapp-float {
+        width: 50px;
+        /* Más pequeño en pantallas pequeñas */
+        height: 50px;
+        bottom: 80px;
+        /* Ajusta la posición si es necesario */
+        right: 20px;
+    }
+
+    .whatsapp-float img {
+        width: 30px;
+        /* Icono más pequeño */
+        height: 30px;
+    }
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media (max-width: 575.98px) {
     .hero-image-section {
-        height: 60vh; /* Menos altura en móviles muy pequeños */
-        padding-top: 60px; /* Ajusta el padding para el header */
+        height: 60vh;
+        /* Menos altura en móviles muy pequeños */
+        padding-top: 60px;
+        /* Ajusta el padding para el header */
     }
 
     .hero-image-section .hero-content h1 {
@@ -506,52 +699,66 @@ body::-webkit-scrollbar {
     .sobre-nosotros,
     .info-empresa,
     .portafolio {
-        min-height: auto; /* La altura se ajusta al contenido */
-        padding: 40px 15px; /* Reduce el padding general */
+        min-height: auto;
+        /* La altura se ajusta al contenido */
+        padding: 40px 15px;
+        /* Reduce el padding general */
     }
 
     .content-wrapper {
-        flex-direction: column; /* Apila columnas */
+        flex-direction: column;
+        /* Apila columnas */
         gap: 30px;
-        padding: 0 10px; /* Más padding para los bordes */
+        padding: 0 10px;
+        /* Más padding para los bordes */
     }
 
     .content-wrapper.reverse-order {
-        flex-direction: column; /* Asegura que se apile también */
+        flex-direction: column;
+        /* Asegura que se apile también */
     }
 
     .section-title {
         font-size: 2rem;
-        text-align: center; /* Centra los títulos de sección en móviles */
+        text-align: center;
+        /* Centra los títulos de sección en móviles */
     }
 
     .section-text,
     .section-text-sobre-nosostros,
     .info-empresa p,
     .portafolio p {
-        font-size: 0.95rem; /* Tamaño de fuente más pequeño */
-        text-align: justify; /* Mantiene la justificación para bloques de texto */
+        font-size: 0.95rem;
+        /* Tamaño de fuente más pequeño */
+        text-align: justify;
+        /* Mantiene la justificación para bloques de texto */
     }
 
     .image-column {
-        width: 100%; /* La imagen ocupa todo el ancho */
-        height: auto; /* Altura automática */
+        width: 100%;
+        /* La imagen ocupa todo el ancho */
+        height: auto;
+        /* Altura automática */
     }
 
     .section-image {
-        max-width: 90%; /* Asegura que la imagen no toque los bordes del móvil */
+        max-width: 90%;
+        /* Asegura que la imagen no toque los bordes del móvil */
     }
 
     .sobre-nosotros h2,
     .info-empresa h2,
     .portafolio h2 {
         font-size: 2rem;
-        margin-top: 3rem; /* Reduce el margen superior */
+        margin-top: 3rem;
+        /* Reduce el margen superior */
     }
 
     .hero-image2-section {
-        height: 60vh; /* Ajusta la altura de la imagen del equipo */
-        width: 95%; /* Asegura que no se desborde */
+        height: 60vh;
+        /* Ajusta la altura de la imagen del equipo */
+        width: 95%;
+        /* Asegura que no se desborde */
         margin-left: auto;
         margin-right: auto;
     }
@@ -561,35 +768,48 @@ body::-webkit-scrollbar {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px; /* Espacio entre las tarjetas */
-        padding: 0 10px; /* Padding para el contenedor de tarjetas */
+        gap: 20px;
+        /* Espacio entre las tarjetas */
+        padding: 0 10px;
+        /* Padding para el contenedor de tarjetas */
     }
 
-    .servicio-card { /* Asumiendo que esta es la clase de tus tarjetas */
-        width: 100%; /* Una tarjeta por fila en móviles */
-        max-width: 300px; /* Un máximo para que no se estiren demasiado en iPads pequeños */
-        margin: 0 auto; /* Centra las tarjetas si hay pocas */
+    .servicio-card {
+        /* Asumiendo que esta es la clase de tus tarjetas */
+        width: 100%;
+        /* Una tarjeta por fila en móviles */
+        max-width: 300px;
+        /* Un máximo para que no se estiren demasiado en iPads pequeños */
+        margin: 0 auto;
+        /* Centra las tarjetas si hay pocas */
     }
 
     .contact-section {
-        padding: 30px 15px; /* Reduce padding on very small screens */
+        padding: 30px 15px;
+        /* Reduce padding on very small screens */
     }
 
     .contact-title {
-        font-size: 1.8em; /* Smaller title */
+        font-size: 1.8em;
+        /* Smaller title */
         margin-bottom: 25px;
     }
 
     .contact-container {
-        flex-direction: column; /* Stack columns vertically */
-        gap: 20px; /* Reduce gap */
+        flex-direction: column;
+        /* Stack columns vertically */
+        gap: 20px;
+        /* Reduce gap */
     }
 
     .contact-form-column,
     .contact-info-column {
-        min-width: unset; /* Remove min-width constraint for smaller screens */
-        width: 100%; /* Take full width */
-        padding: 20px; /* Reduce padding inside columns */
+        min-width: unset;
+        /* Remove min-width constraint for smaller screens */
+        width: 100%;
+        /* Take full width */
+        padding: 20px;
+        /* Reduce padding inside columns */
     }
 
     .contact-form label {
@@ -620,7 +840,8 @@ body::-webkit-scrollbar {
     }
 
     .contact-map iframe {
-        height: 150px; /* Smaller map on very small screens */
+        height: 150px;
+        /* Smaller map on very small screens */
     }
 
     .social-media-text {
@@ -634,11 +855,13 @@ body::-webkit-scrollbar {
     }
 
     .social-icons {
-        gap: 15px; /* Reduce gap between social icons */
+        gap: 15px;
+        /* Reduce gap between social icons */
     }
 
     .social-icon {
-        width: 40px; /* Smaller social icons */
+        width: 40px;
+        /* Smaller social icons */
         height: 40px;
     }
 }
@@ -648,12 +871,15 @@ body::-webkit-scrollbar {
     .hero-image-section {
         height: 70vh;
     }
+
     .valores-section {
-        padding: 50px 20px; /* Ajusta padding */
+        padding: 50px 20px;
+        /* Ajusta padding */
     }
 
     .content-wrapper {
-        flex-direction: column; /* Mantiene la disposición en columna para tablets pequeñas */
+        flex-direction: column;
+        /* Mantiene la disposición en columna para tablets pequeñas */
         gap: 30px;
         padding: 0 15px;
     }
@@ -661,17 +887,22 @@ body::-webkit-scrollbar {
     .content-wrapper.reverse-order {
         flex-direction: column;
     }
+
     .section-title {
         font-size: 2.2rem;
     }
+
     .section-text {
         font-size: 1rem;
     }
+
     .hero-image2-section {
         height: 70vh;
     }
+
     .servicio-card {
-        width: calc(50% - 15px); /* Dos tarjetas por fila con un pequeño espacio */
+        width: calc(50% - 15px);
+        /* Dos tarjetas por fila con un pequeño espacio */
     }
 
     .contact-section {
@@ -684,14 +915,17 @@ body::-webkit-scrollbar {
     }
 
     .contact-container {
-        flex-direction: column; /* Keep columns stacked on small tablets/large phones */
+        flex-direction: column;
+        /* Keep columns stacked on small tablets/large phones */
         gap: 30px;
     }
 
     .contact-form-column,
     .contact-info-column {
-        width: 90%; /* Allow them to take a bit more width */
-        margin: 0 auto; /* Center them */
+        width: 90%;
+        /* Allow them to take a bit more width */
+        margin: 0 auto;
+        /* Center them */
     }
 
     .contact-map iframe {
@@ -706,6 +940,19 @@ body::-webkit-scrollbar {
         width: 45px;
         height: 45px;
     }
+
+    .whatsapp-float {
+        width: 45px;
+        height: 45px;
+        bottom: 70px;
+        /* Posición más arriba si tienes el botón de scroll-to-top */
+        right: 15px;
+    }
+
+    .whatsapp-float img {
+        width: 28px;
+        height: 28px;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -713,34 +960,43 @@ body::-webkit-scrollbar {
     .hero-image-section {
         height: 80vh;
     }
+
     .valores-section {
         padding: 60px 20px;
     }
 
     .content-wrapper {
-        flex-direction: row; /* Vuelve a la disposición horizontal (texto e imagen lado a lado) */
+        flex-direction: row;
+        /* Vuelve a la disposición horizontal (texto e imagen lado a lado) */
         gap: 40px;
     }
 
     .content-wrapper.reverse-order {
-        flex-direction: row-reverse; /* Si tiene la clase, vuelve al orden inverso horizontal */
+        flex-direction: row-reverse;
+        /* Si tiene la clase, vuelve al orden inverso horizontal */
     }
+
     .section-title {
         font-size: 2.5rem;
-        text-align: left; /* Vuelve a la alineación izquierda */
+        text-align: left;
+        /* Vuelve a la alineación izquierda */
     }
+
     .section-text {
         font-size: 1.1rem;
     }
+
     .hero-image2-section {
         height: 80vh;
     }
+
     /* Estilos para tarjetas en tablets (ej. 3 columnas) */
     .servicio-card {
-        width: calc(33.33% - 20px); /* Tres tarjetas por fila */
+        width: calc(33.33% - 20px);
+        /* Tres tarjetas por fila */
     }
 
-     .contact-section {
+    .contact-section {
         padding: 50px 30px;
     }
 
@@ -749,17 +1005,23 @@ body::-webkit-scrollbar {
     }
 
     .contact-container {
-        flex-direction: row; /* Allow side-by-side again */
-        flex-wrap: wrap; /* In case one column gets too wide */
+        flex-direction: row;
+        /* Allow side-by-side again */
+        flex-wrap: wrap;
+        /* In case one column gets too wide */
         justify-content: center;
-        gap: 30px; /* Slightly reduced gap for tablets */
+        gap: 30px;
+        /* Slightly reduced gap for tablets */
     }
 
     .contact-form-column,
     .contact-info-column {
-        flex: 1; /* Distribute space evenly */
-        min-width: 320px; /* Ensure a decent minimum width */
-        max-width: calc(50% - 15px); /* Max 2 columns per row with gap */
+        flex: 1;
+        /* Distribute space evenly */
+        min-width: 320px;
+        /* Ensure a decent minimum width */
+        max-width: calc(50% - 15px);
+        /* Max 2 columns per row with gap */
         padding: 25px;
     }
 
@@ -773,34 +1035,44 @@ body::-webkit-scrollbar {
     .hero-image-section {
         height: 100vh;
     }
+
     .hero-image-section .hero-content h1 {
         font-size: 3.5rem;
     }
+
     .hero-image-section .hero-content p {
         font-size: 1.5rem;
     }
+
     .content-wrapper {
         flex-direction: row;
         gap: 40px;
     }
+
     .content-wrapper.reverse-order {
         flex-direction: row-reverse;
     }
+
     .section-title {
         font-size: 2.5rem;
         text-align: left;
     }
+
     .section-text {
         font-size: 1.1rem;
     }
+
     .hero-image2-section {
         height: 95vh;
         width: 97%;
-        margin-left: 1.8rem; /* Reestablece el margen si lo modificaste */
+        margin-left: 1.8rem;
+        /* Reestablece el margen si lo modificaste */
     }
+
     /* Estilos para tarjetas en desktop (ej. 4 columnas o más) */
     .servicio-card {
-        width: calc(25% - 22.5px); /* Cuatro tarjetas por fila (ajusta el gap si es diferente) */
+        width: calc(25% - 22.5px);
+        /* Cuatro tarjetas por fila (ajusta el gap si es diferente) */
     }
 
     .contact-section {
@@ -812,16 +1084,20 @@ body::-webkit-scrollbar {
     }
 
     .contact-container {
-        flex-direction: row; /* Ensure side-by-side */
+        flex-direction: row;
+        /* Ensure side-by-side */
         justify-content: center;
-        gap: 40px; /* Original gap */
+        gap: 40px;
+        /* Original gap */
     }
 
     .contact-form-column,
     .contact-info-column {
         flex: 1;
-        min-width: 300px; /* Original min-width */
-        max-width: 500px; /* Optional: set a max-width for very wide screens */
+        min-width: 300px;
+        /* Original min-width */
+        max-width: 500px;
+        /* Optional: set a max-width for very wide screens */
         padding: 30px;
     }
 
@@ -832,7 +1108,8 @@ body::-webkit-scrollbar {
 
 /* Estilos para los títulos y párrafos */
 h2 {
-    font-family: 'Arial Black', sans-serif; /* Ejemplo de fuente, usa la que prefieras */
+    font-family: 'Arial Black', sans-serif;
+    /* Ejemplo de fuente, usa la que prefieras */
     text-transform: uppercase;
     letter-spacing: 1px;
 }
