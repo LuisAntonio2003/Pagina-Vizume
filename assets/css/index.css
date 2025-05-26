@@ -193,7 +193,7 @@ body::-webkit-scrollbar {
     background: var(--color-container-b);
 }
 
-.info-empresa h2, .portafolio h2 {
+.info-empresa h2, .portafolio h2, .contact-title{
     margin-bottom: 20px;
     font-size: 2.5rem;
     color: var(--secondary);
@@ -208,6 +208,165 @@ body::-webkit-scrollbar {
     max-width: 900px;
     margin: 0 auto 30px; /* Centra el párrafo y le da margen inferior */
 }
+
+/* CONTACT SECTION */
+.contact-section {
+    background: var(--color-container-a); /* Gradient background from image */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+    justify-content: center;
+    gap: 40px; /* Space between columns */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-form-column,
+.contact-info-column {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white background for cards */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    min-width: 300px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--text-color-dark); /* White text for labels */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly opaque white input fields */
+    color: var(--text-color-dark); /* Dark text in input fields */
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing of textarea */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #666;
+}
+
+.submit-button {
+    background: var(--button-first); /* Green button as in the image */
+    color: var(--primary);
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background: var(--button-secondary) /* Darker green on hover */
+}
+
+.contact-info-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.contact-info-column h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: var(--text-color-dark); /* White text for subheadings */
+    font-weight: bold;
+}
+
+.contact-info-column p {
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: var(--text-color-dark); /* White text for info */
+}
+
+.contact-map {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden; /* Ensures the iframe corners are rounded */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-map iframe {
+    width: 100%; /* Ensure iframe takes full width of its container */
+    height: 200px; /* Fixed height for consistency */
+    border: 0; /* Remove default iframe border */
+    border-radius: 10px; /* Apply border-radius to the iframe itself */
+}
+
+.social-media-text {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Lighter background for social media text */
+    border-radius: 10px;
+}
+
+.social-media-text p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%; /* Makes the icons circular */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slight shadow for icons */
+}
+
+/* Replace with actual image paths for your social media icons */
+.social-icon.facebook {
+    background-image: url('/assets/img/facebook.png'); 
+}
+
+.social-icon.instagram {
+    background-image: url('/assets/img/instagram.png'); 
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.05); /* Slight lift and scale on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 /* boton emergente flotante */
 
 .scroll-to-top-btn {
@@ -411,6 +570,77 @@ body::-webkit-scrollbar {
         max-width: 300px; /* Un máximo para que no se estiren demasiado en iPads pequeños */
         margin: 0 auto; /* Centra las tarjetas si hay pocas */
     }
+
+    .contact-section {
+        padding: 30px 15px; /* Reduce padding on very small screens */
+    }
+
+    .contact-title {
+        font-size: 1.8em; /* Smaller title */
+        margin-bottom: 25px;
+    }
+
+    .contact-container {
+        flex-direction: column; /* Stack columns vertically */
+        gap: 20px; /* Reduce gap */
+    }
+
+    .contact-form-column,
+    .contact-info-column {
+        min-width: unset; /* Remove min-width constraint for smaller screens */
+        width: 100%; /* Take full width */
+        padding: 20px; /* Reduce padding inside columns */
+    }
+
+    .contact-form label {
+        font-size: 0.9em;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        padding: 10px;
+        margin-bottom: 15px;
+        font-size: 0.9em;
+    }
+
+    .submit-button {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    .contact-info-column h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .contact-info-column p {
+        font-size: 1em;
+        margin-bottom: 5px;
+    }
+
+    .contact-map iframe {
+        height: 150px; /* Smaller map on very small screens */
+    }
+
+    .social-media-text {
+        margin-top: 30px;
+        padding: 15px;
+    }
+
+    .social-media-text p {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .social-icons {
+        gap: 15px; /* Reduce gap between social icons */
+    }
+
+    .social-icon {
+        width: 40px; /* Smaller social icons */
+        height: 40px;
+    }
 }
 
 /* Small devices (phones, 576px and up) */
@@ -442,6 +672,39 @@ body::-webkit-scrollbar {
     }
     .servicio-card {
         width: calc(50% - 15px); /* Dos tarjetas por fila con un pequeño espacio */
+    }
+
+    .contact-section {
+        padding: 40px 20px;
+    }
+
+    .contact-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .contact-container {
+        flex-direction: column; /* Keep columns stacked on small tablets/large phones */
+        gap: 30px;
+    }
+
+    .contact-form-column,
+    .contact-info-column {
+        width: 90%; /* Allow them to take a bit more width */
+        margin: 0 auto; /* Center them */
+    }
+
+    .contact-map iframe {
+        height: 180px;
+    }
+
+    .social-media-text p {
+        font-size: 1.1em;
+    }
+
+    .social-icon {
+        width: 45px;
+        height: 45px;
     }
 }
 
@@ -475,6 +738,33 @@ body::-webkit-scrollbar {
     /* Estilos para tarjetas en tablets (ej. 3 columnas) */
     .servicio-card {
         width: calc(33.33% - 20px); /* Tres tarjetas por fila */
+    }
+
+     .contact-section {
+        padding: 50px 30px;
+    }
+
+    .contact-title {
+        font-size: 2.2em;
+    }
+
+    .contact-container {
+        flex-direction: row; /* Allow side-by-side again */
+        flex-wrap: wrap; /* In case one column gets too wide */
+        justify-content: center;
+        gap: 30px; /* Slightly reduced gap for tablets */
+    }
+
+    .contact-form-column,
+    .contact-info-column {
+        flex: 1; /* Distribute space evenly */
+        min-width: 320px; /* Ensure a decent minimum width */
+        max-width: calc(50% - 15px); /* Max 2 columns per row with gap */
+        padding: 25px;
+    }
+
+    .contact-map iframe {
+        height: 200px;
     }
 }
 
@@ -511,6 +801,32 @@ body::-webkit-scrollbar {
     /* Estilos para tarjetas en desktop (ej. 4 columnas o más) */
     .servicio-card {
         width: calc(25% - 22.5px); /* Cuatro tarjetas por fila (ajusta el gap si es diferente) */
+    }
+
+    .contact-section {
+        padding: 60px 40px;
+    }
+
+    .contact-title {
+        font-size: 2.5em;
+    }
+
+    .contact-container {
+        flex-direction: row; /* Ensure side-by-side */
+        justify-content: center;
+        gap: 40px; /* Original gap */
+    }
+
+    .contact-form-column,
+    .contact-info-column {
+        flex: 1;
+        min-width: 300px; /* Original min-width */
+        max-width: 500px; /* Optional: set a max-width for very wide screens */
+        padding: 30px;
+    }
+
+    .contact-map iframe {
+        height: 200px;
     }
 }
 

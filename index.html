@@ -121,6 +121,54 @@
         </section>
     </main>
 
+    <section class="contact-section" id="contact-section">
+        <h2 class="contact-title">CONTÁCTANOS</h2>
+        <div class="contact-container">
+            <div class="contact-form-column">
+                <form class="contact-form" id="contactForm"> <label for="nombre">NOMBRE(S)</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="email">CORREO ELECTRÓNICO</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="mensaje">MENSAJE</label>
+                    <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+
+                    <button type="submit" class="submit-button">ENVIAR</button>
+                    <div id="formMessage" style="margin-top: 15px; font-weight: bold; text-align: center;"></div>
+                </form>
+            </div>
+            <div class="contact-info-column">
+                <div class="contact-details">
+                    <h3>TELÉFONOS DE CONTACTO</h3>
+                    <p>5789547895</p>
+                    <p>5789547895</p>
+                </div>
+                <div class="contact-address">
+                    <h3>NOS ENCONTRAMOS</h3>
+                    <p>3 Av. Insurgentes</p>
+                    <p>Ecatepec de Morelos, Estado de México</p>
+                </div>
+                <div class="contact-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!3m2!1ses-419!2smx!4v1748273819756!5m2!1ses-419!2smx!6m8!1m7!1ssz1unfRuadbt4MU-RT4iSQ!2m2!1d19.59326293435412!2d-99.04363933033851!3f244.3582865220387!4f-11.239324370554442!5f0.7820865974627469"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="social-media-text">
+            <p>MANTENTE INFORMADO SOBRE LAS CAPACITACIONES QUE SE OFERTAN CONSTANTEMENTE DESDE NUESTRAS REDES SOCIALES
+            </p>
+            <div class="social-icons">
+                <a href="#" class="social-icon facebook"></a>
+                <a href="#" class="social-icon instagram"></a>
+            </div>
+        </div>
+    </section>
+
     <button id="scrollToTopBtn" class="scroll-to-top-btn" title="Volver al inicio">
         &#x2191;
     </button>
@@ -130,6 +178,8 @@
 
     <!--SCRIPT PARA EL LLAMADO PARA GENERAR TARJETAS -->
     <script src="assets/js/Generador-tarjetas.js"></script>
+
+    <script src="/assets/js/contact.js"></script>
 
     <!--SCRIPT PARA EL LLAMADO DEL HEADER -->
     <script>
